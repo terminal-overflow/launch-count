@@ -35,12 +35,12 @@ pip3 install -r requirements.txt
 
 ### Run launch-count with time zones
 ```
-python3 time.py
+python3 count.py
 ```
 
 ### Run launch-count without time zones
 ```
-python3 simple_time.py
+python3 count.py
 ```
 
 ---
