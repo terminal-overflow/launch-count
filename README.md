@@ -40,7 +40,7 @@ python3 count.py
 
 ### Run launch-count without time zones
 ```
-python3 count.py
+python3 simple_count.py
 ```
 
 ---
