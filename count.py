@@ -47,6 +47,7 @@ if os.stat('info/info.txt').st_size > 0:
             else:
                 num = num +1
 else:
+    file.close()
     days_till = 'hidden'
 
 #open highlight locations
