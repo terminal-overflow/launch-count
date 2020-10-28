@@ -52,7 +52,7 @@ python3 simple_count.py
 * If no date is entered, `count.py` will just display time zones whereas `simple_count.py` will exit.
 
 ### Time zone highlight
-* The file `highlight.txt` controls which time zones are highlighted and only affect `count.py`.
+* The file `highlight.txt` controls which time zones are highlighted and only affects `count.py`.
 * Any number of time zones can be entered (distinguished by only a comma or only a new line).
 
 #### Note
