@@ -105,7 +105,7 @@ UTC0_2 = pytz.timezone('Atlantic/Reykjavik')
 UTC0 = pytz.timezone('Europe/London')
 UTC1 = pytz.timezone('Europe/Paris')
 UTC3 = pytz.timezone('Europe/Moscow')
-UTC4 = pytz.timezone('Asia/Dubai')
+UTC55 = pytz.timezone('Asia/Kolkata')
 UTC6 = pytz.timezone('Asia/Almaty')
 UTC8 = pytz.timezone('Asia/Shanghai')
 UTC9 = pytz.timezone('Asia/Tokyo')
@@ -129,7 +129,7 @@ datetime_utc0_2 = datetime.now(UTC0_2) #+0
 datetime_utc0 = datetime.now(UTC0) #+0
 datetime_utc1 = datetime.now(UTC1) #+1
 datetime_utc3 = datetime.now(UTC3) #+3
-datetime_utc4 = datetime.now(UTC4) #+4
+datetime_utc55 = datetime.now(UTC55) #+5.5
 datetime_utc6 = datetime.now(UTC6) #+6
 datetime_utc8 = datetime.now(UTC8) #+8
 datetime_utc9 = datetime.now(UTC9) #+9
@@ -184,8 +184,8 @@ france_txt.config(font= ('Arial', f_size))
 moscow_txt = Label(root, text= 'Moscow:', width=15, height= 2, padx= 5, foreground= 'white', background= 'black')
 moscow_txt.config(font= ('Arial', f_size))
 
-dubai_txt = Label(root, text= 'Dubai:', width=15, height= 2, padx= 5, foreground= 'white', background= 'black')
-dubai_txt.config(font= ('Arial', f_size))
+india_txt = Label(root, text= 'India:', width=15, height= 2, padx= 5, foreground= 'white', background= 'black')
+india_txt.config(font= ('Arial', f_size))
 
 kazakhstan_txt = Label(root, text= 'Kazakhstan:', width=15, height= 2, padx= 5, foreground= 'white', background= 'black')
 kazakhstan_txt.config(font= ('Arial', f_size))
@@ -247,8 +247,8 @@ france_label.config(font= ('Arial', f_size))
 moscow_label = Label(root, text= datetime_utc3.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, padx= 5, foreground= 'green', background= 'black')
 moscow_label.config(font= ('Arial', f_size))
 
-dubai_label = Label(root, text= datetime_utc4.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, padx= 5, foreground= 'green', background= 'black')
-dubai_label.config(font= ('Arial', f_size))
+india_label = Label(root, text= datetime_utc55.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, padx= 5, foreground= 'green', background= 'black')
+india_label.config(font= ('Arial', f_size))
 
 kazakhstan_label = Label(root, text= datetime_utc6.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, padx= 5, foreground= 'green', background= 'black')
 kazakhstan_label.config(font= ('Arial', f_size))
@@ -312,8 +312,8 @@ france_label.grid(row= 4, column= 6)
 moscow_txt.grid(row= 5, column= 5)
 moscow_label.grid(row= 5, column= 6)
 
-dubai_txt.grid(row= 6, column= 5)
-dubai_label.grid(row= 6, column= 6)
+india_txt.grid(row= 6, column= 5)
+india_label.grid(row= 6, column= 6)
 
 kazakhstan_txt.grid(row= 7, column= 5)
 kazakhstan_label.grid(row= 7, column= 6)
@@ -377,7 +377,7 @@ def main_loop():
     datetime_utc0 = datetime.now(UTC0) #+0
     datetime_utc1 = datetime.now(UTC1) #+1
     datetime_utc3 = datetime.now(UTC3) #+3
-    datetime_utc4 = datetime.now(UTC4) #+4
+    datetime_utc55 = datetime.now(UTC55) #+5.5
     datetime_utc6 = datetime.now(UTC6) #+6
     datetime_utc8 = datetime.now(UTC8) #+8
     datetime_utc9 = datetime.now(UTC9) #+9
@@ -417,8 +417,8 @@ def main_loop():
     france_label.config(text= datetime_utc1.strftime('%d:%m:%Y %H:%M:%S %Z %z'), font= ('Arial', f_size))
     moscow_txt.config(font= ('Arial', f_size))
     moscow_label.config(text= datetime_utc3.strftime('%d:%m:%Y %H:%M:%S %Z %z'), font= ('Arial', f_size))
-    dubai_txt.config(font= ('Arial', f_size))
-    dubai_label.config(text= datetime_utc4.strftime('%d:%m:%Y %H:%M:%S %Z %z'), font= ('Arial', f_size))
+    india_txt.config(font= ('Arial', f_size))
+    india_label.config(text= datetime_utc55.strftime('%d:%m:%Y %H:%M:%S %Z %z'), font= ('Arial', f_size))
     kazakhstan_txt.config(font= ('Arial', f_size))
     kazakhstan_label.config(text= datetime_utc6.strftime('%d:%m:%Y %H:%M:%S %Z %z'), font= ('Arial', f_size))
     china_txt.config(font= ('Arial', f_size))
@@ -474,9 +474,9 @@ def main_loop():
         if 'moscow' in launch_loc:
             moscow_txt.config(foreground= 'yellow')
             moscow_label.config(foreground= 'yellow')
-        if 'dubai' in launch_loc:
-            dubai_txt.config(foreground= 'yellow')
-            dubai_label.config(foreground= 'yellow')
+        if 'india' in launch_loc:
+            india_txt.config(foreground= 'yellow')
+            india_label.config(foreground= 'yellow')
         if 'kazakhstan' in launch_loc:
             kazakhstan_txt.config(foreground= 'yellow')
             kazakhstan_label.config(foreground= 'yellow')
