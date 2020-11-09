@@ -599,7 +599,7 @@ def main_loop():
         if end_time == True:
             t_label.config(foreground= 'dark red')
 
-        #time of launch
+        #display time of launch
         if l_hour < 10 and l_hour >= 0:
             d_hour = f'0{l_hour}'
         else:
@@ -639,6 +639,7 @@ def main_loop():
         root.after(100, ts_label.destroy)
         root.after(100, t_label.destroy)
         root.after(100, day_label.destroy)
+        root.after(100, time_d.destroy)
 
 def timer_loop():
     global days_after
