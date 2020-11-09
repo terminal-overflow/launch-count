@@ -599,15 +599,37 @@ def main_loop():
         if end_time == True:
             t_label.config(foreground= 'dark red')
 
+        #time of launch
+        if l_hour < 10 and l_hour >= 0:
+            d_hour = f'0{l_hour}'
+        else:
+            d_hour = l_hour
+
+        if l_minute < 10 and l_minute >= 0:
+            d_minute = f'0{l_minute}'
+        else:
+            d_minute = l_minute
+
+        if l_second < 10 and l_second >= 0:
+            d_second = f'0{l_second}'
+        else:
+            d_second = l_second
+
+        hour_min = f'{d_hour}:{d_minute}:{d_second}'
+        time_d = Label(root, text= hour_min, width= 15, height= 2, padx= 10, foreground= 'white', background= 'black')
+        time_d.config(font= ('Arial', f_size))
+
         #T± labels
         if width_value < 2560:
             ts_label.grid(row= 2, column= 2)
             day_label.grid(row= 2, column= 3)
             t_label.grid(row= 2, column= 4)
+            time_d.grid(row= 3, column= 2, columnspan= 3)
         else:
             ts_label.grid(row= 1, column= 2)
             day_label.grid(row= 1, column= 3)
             t_label.grid(row= 1, column= 4)
+            time_d.grid(row= 2, column= 2, columnspan= 3)
 
     #no slow down/overlapping
     root.after(100, main_loop)
