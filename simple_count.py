@@ -142,6 +142,7 @@ def main_loop():
     if t_label['text'] == '0:00:00' and days_till >= 0:
         days_till = days_till +1
 
+    days_after = int(days_after)
     if days_till == 1 or days_after == 1:
         days = ' Day'
     else:

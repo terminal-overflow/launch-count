@@ -552,6 +552,7 @@ def main_loop():
         else:
             t_label.config(text= total_time)
 
+        days_after = int(days_after)
         #make sure days are correct
         if t_label['text'] == '0:00:00' and days_till >= 0:
             days_till = days_till +1
@@ -600,11 +601,8 @@ def main_loop():
             t_label.config(foreground= 'dark red')
 
         #display time of launch
-        if l_hour < 10 and l_hour >= 0:
-            d_hour = f'0{l_hour}'
-        else:
-            d_hour = l_hour
-
+        d_hour = l_hour
+        
         if l_minute < 10 and l_minute >= 0:
             d_minute = f'0{l_minute}'
         else:
