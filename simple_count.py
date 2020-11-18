@@ -15,7 +15,7 @@ if os.stat('info/info.txt').st_size > 0:
     for line in file:
         for letter in line:
             if letter == ',':
-                comma = comma +1
+                comma += 1
         if comma < 6:
             print('Invalid entry')
             exit()
@@ -45,7 +45,7 @@ if os.stat('info/info.txt').st_size > 0:
                 extra_days = True
                 break
             else:
-                num = num +1
+                num += 1
 else:
     print('Invalid entry')
     exit()
@@ -97,7 +97,7 @@ def main_loop():
         if num +1 == len(dates):
             extra_days = True
         else:
-            num = num +1
+            num += 1
     #duplication for no overlapping
     t_string, l_year, l_month, l_day, l_hour, l_minute, l_second = dates[num].split(',')
     l_year = int(l_year)
@@ -140,7 +140,7 @@ def main_loop():
         t_label.config(text= total_time)
 
     if t_label['text'] == '0:00:00' and days_till >= 0:
-        days_till = days_till +1
+        days_till += 1
 
     days_after = int(days_after)
     if days_till == 1 or days_after == 1:
