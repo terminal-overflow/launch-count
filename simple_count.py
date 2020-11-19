@@ -1,6 +1,5 @@
 from datetime import datetime, timedelta
 import time
-import pytz
 from tkinter import *
 import os
 
