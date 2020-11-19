@@ -4,7 +4,7 @@
 This repository provides you with two versions of the program - one with world time zones and one without. Both provide a countdown/up for rocket launches or space related events.
 
 ### Dependencies
-* pytz
+* pytz (`count.py`)
 
 ---
 ## Installation via GitHub
