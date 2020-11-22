@@ -3,12 +3,11 @@ import time
 from tkinter import *
 import os
 
-comma = 0
-
 #change directory into launch-count/
 os.chdir(f'{os.path.dirname(os.path.realpath(__file__))}/')
 
 #file format: t-, launch year, launch month, launch day, launch hour, launch minute, launch second
+comma = 0
 file = open('info/info.txt', 'r')
 if os.stat('info/info.txt').st_size > 0:
     for line in file:
@@ -23,28 +22,44 @@ if os.stat('info/info.txt').st_size > 0:
     file = open('info/info.txt', 'r')
     dates = file.readlines()
     file.close()
-    if '\n' in dates:
-        dates.remove('\n')
     num = 0
-    for i in range(len(dates)):
-        dates[i] = dates[i].strip()
-        t_string, l_year, l_month, l_day, l_hour, l_minute, l_second = dates[num].split(',')
-        #convert str to int
-        l_year = int(l_year)
-        l_month = int(l_month)
-        l_day = int(l_day)
-        l_hour = int(l_hour)
-        l_minute = int(l_minute)
-        l_second = int(l_second)
 
-        #get days till
-        days_till = (datetime(l_year, l_month, l_day, l_hour, l_minute, l_second) - datetime.now()).days
-        if days_till < 0:
-            if num +1 == len(dates):
-                extra_days = True
-                break
-            else:
-                num += 1
+    #mark positions in list to remove
+    r = []
+    for i in range(len(dates)):
+        if dates[i].startswith('#'):
+            r.append(i)
+    #corrects remove position shift
+    for i in range(len(r)):
+        r[i] = r[i] - i
+
+    if len(r) != len(dates):
+        #remove
+        for i in range(len(r)):
+            dates.remove(dates[r[i]])
+
+        for i in range(len(dates)):
+            dates[i] = dates[i].strip()
+            t_string, l_year, l_month, l_day, l_hour, l_minute, l_second = dates[num].split(',')
+            #convert str to int
+            l_year = int(l_year)
+            l_month = int(l_month)
+            l_day = int(l_day)
+            l_hour = int(l_hour)
+            l_minute = int(l_minute)
+            l_second = int(l_second)
+
+            #get days till
+            days_till = (datetime(l_year, l_month, l_day, l_hour, l_minute, l_second) - datetime.now()).days
+            if days_till < 0:
+                if num +1 == len(dates):
+                    extra_days = True
+                    break
+                else:
+                    num += 1
+    else:
+        print('Invalid entry')
+        exit()
 else:
     print('Invalid entry')
     exit()
