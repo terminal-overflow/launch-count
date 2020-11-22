@@ -49,6 +49,7 @@ python3 simple_count.py
 * The file `info.txt` controls when the 'event' is taking place.
 * Format: `t-,year,month,day,hour,minute,second`.
 * Any number of dates can be entered (distinguished by a new line).
+* A line can be commented out using a hashtag(#).
 * If no date is entered, `count.py` will just display time zones whereas `simple_count.py` will exit.
 
 ### Time zone highlight
