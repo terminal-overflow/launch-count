@@ -72,6 +72,20 @@ if ',' in launch_loc:
 else:
     launch_loc = launch_loc.split('\n')
 file.close()
+
+#mark positions in list to remove
+r = []
+for i in range(len(launch_loc)):
+    if launch_loc[i].startswith('#'):
+        r.append(i)
+#corrects remove position shift
+for i in range(len(r)):
+    r[i] = r[i] - i
+
+if len(r) != len(launch_loc):
+    #remove
+    for i in range(len(r)):
+        launch_loc.remove(launch_loc[r[i]])
 for i in range(len(launch_loc)):
     launch_loc[i] = launch_loc[i].lower()
     launch_loc[i] = launch_loc[i].strip()
