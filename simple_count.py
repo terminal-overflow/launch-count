@@ -4,7 +4,7 @@ from tkinter import *
 import os
 
 #change directory into launch-count/
-os.chdir(f'{os.path.dirname(os.path.realpath(__file__))}/')
+os.chdir(f'{os.path.dirname(os.path.abspath(__file__))}/')
 
 #file format: t-, launch year, launch month, launch day, launch hour, launch minute, launch second
 comma = 0
