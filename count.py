@@ -30,7 +30,7 @@ if os.stat('info/info.txt').st_size > 0:
     for i in range(len(dates)):
         if dates[i].startswith('#'):
             r.append(i)
-    #corrects remove position shift
+    #corrects position shift
     for i in range(len(r)):
         r[i] = r[i] - i
 
@@ -78,7 +78,7 @@ r = []
 for i in range(len(launch_loc)):
     if launch_loc[i].startswith('#'):
         r.append(i)
-#corrects remove position shift
+#corrects position shift
 for i in range(len(r)):
     r[i] = r[i] - i
 
