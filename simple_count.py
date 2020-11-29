@@ -67,7 +67,6 @@ else:
 root = Tk()
 root.title('World Times')
 root.configure(background= 'black')
-
 #changing font size relative to screen size
 f_size = 80
 

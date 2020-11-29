@@ -97,6 +97,11 @@ root.configure(background= 'black')
 width_value = root.winfo_screenwidth()
 height_value = root.winfo_screenheight()
 root.geometry('%dx%d' % (width_value, height_value))
+#changing font size relative to screen size
+if width_value < 2560 and height_value < 1440:
+    f_size = 20
+else:
+    f_size = 35
 
 #full screen
 s_full = False
@@ -119,12 +124,6 @@ def f_close(event):
 root.bind('q', close)
 root.bind('f', f_screen)
 root.bind('<Escape>', f_close)
-
-#changing font size relative to screen size
-if width_value < 2560 and height_value < 1440:
-    f_size = 20
-else:
-    f_size = 35
 
 #variables
 seconds = 0
