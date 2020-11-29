@@ -90,12 +90,35 @@ for i in range(len(launch_loc)):
     launch_loc[i] = launch_loc[i].lower()
     launch_loc[i] = launch_loc[i].strip()
 
+#configure window
 root = Tk()
 root.title('World Times')
 root.configure(background= 'black')
 width_value = root.winfo_screenwidth()
 height_value = root.winfo_screenheight()
 root.geometry('%dx%d' % (width_value, height_value))
+
+#full screen
+s_full = False
+def close(event):
+    exit()
+def f_screen(event):
+    global s_full
+    if s_full == True:
+        s_full = False
+        root.wm_attributes('-fullscreen', 'false')
+    else:
+        s_full = True
+        root.wm_attributes('-fullscreen', 'true')
+def f_close(event):
+    global s_full
+    s_full = False
+    root.wm_attributes('-fullscreen', 'false')
+
+#key binds
+root.bind('q', close)
+root.bind('f', f_screen)
+root.bind('<Escape>', f_close)
 
 #changing font size relative to screen size
 if width_value < 2560 and height_value < 1440:
@@ -630,7 +653,7 @@ def main_loop():
 
         #display time of launch
         d_hour = l_hour
-        
+
         if l_minute < 10 and l_minute >= 0:
             d_minute = f'0{l_minute}'
         else:

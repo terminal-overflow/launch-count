@@ -59,6 +59,11 @@ python3 simple_count.py
 #### Note
 These files can be found in the `info/` directory.
 
+### Keybinds (`count.py`)
+* F: Toggle fullscreen
+* Esc: Exit fullscreen
+* Q: Quit program
+
 ---
 ### Example
 Launch date from Cape Canaveral: 20 February 2020 at 13:15:18pm (local time)
