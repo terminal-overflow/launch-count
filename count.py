@@ -103,10 +103,10 @@ if width_value < 2560 and height_value < 1440:
 else:
     f_size = 35
 
-#full screen
-s_full = False
+#key bind functions
 def close(event):
-    exit()
+    root.destroy()
+s_full = False
 def f_screen(event):
     global s_full
     if s_full == True:
