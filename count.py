@@ -98,7 +98,7 @@ width_value = root.winfo_screenwidth()
 height_value = root.winfo_screenheight()
 root.wm_minsize(1440, 700)
 #changing font size relative to screen size
-if width_value < 2560:
+if width_value < 2560 and height_value < 1200:
     f_size = 20
     title_pad = 10
 else:
@@ -388,14 +388,14 @@ new_zealand_txt.grid(row= 11, column= 5)
 new_zealand_label.grid(row= 11, column= 6, padx= (padding_2, padding_1))
 
 def main_loop():
+    global dates
+    global t_string
+    global l_year, l_month, l_day, l_hour, l_minute, l_second
     global days_till
+    global num
     global extra_days
     global days_after
     global changed
-    global l_year, l_month, l_day, l_hour, l_minute, l_second
-    global dates
-    global t_string
-    global num
     global f_size
     global padding_1, padding_2, title_pad
 
@@ -724,13 +724,13 @@ def main_loop():
         root.after(100, time_d.destroy)
 
 def timer_loop():
-    global days_after
-    global hours
-    global minutes
     global seconds
-    global extra_days
-    global timer
+    global minutes
+    global hours
     global days_till
+    global extra_days
+    global days_after
+    global timer
 
     if extra_days == True:
         year_now = datetime.now().strftime('%Y')
