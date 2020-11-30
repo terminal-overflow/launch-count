@@ -70,9 +70,11 @@ root.configure(background= 'black')
 #changing font size relative to screen size
 f_size = 80
 
-#key binds
+#key bind functions
 def close(event):
     root.destroy()
+
+#key binds
 root.bind('q', close)
 
 #variables
