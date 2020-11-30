@@ -96,12 +96,19 @@ root.title('World Times')
 root.configure(background= 'black')
 width_value = root.winfo_screenwidth()
 height_value = root.winfo_screenheight()
-root.geometry('%dx%d' % (width_value, height_value))
+root.wm_minsize(1440, 700)
 #changing font size relative to screen size
-if width_value < 2560 and height_value < 1440:
+if width_value < 2560:
     f_size = 20
+    title_pad = 10
 else:
     f_size = 35
+    title_pad = 50
+#window variables
+padding_1 = (100 / 2560) * width_value
+padding_1 = (padding_1 / 100) * 170
+padding_1 = round(padding_1)
+padding_2 = 5
 
 #key bind functions
 def close(event):
@@ -187,69 +194,69 @@ datetime_utc11 = datetime.now(UTC11) #+11
 datetime_utc12 = datetime.now(UTC12) #+12
 
 #static text
-title = Label(root, text= 'World Times', width= 15, height= 2, padx= 10, foreground= 'white', background= 'black')
+title = Label(root, text= 'World Times', width= 15, height= 2, foreground= 'white', background= 'black')
 title.config(font= ('Arial', f_size + 10))
 
 #<= -1
-cape_verde_txt = Label(root, text= 'Cape Verde:', width= 15, height= 2, padx= 5, foreground= 'white', background= 'black')
+cape_verde_txt = Label(root, text= 'Cape Verde:', width= 15, height= 2, foreground= 'white', background= 'black')
 cape_verde_txt.config(font= ('Arial', f_size))
 
-south_georgia_txt = Label(root, text= 'South Georgia:', width= 15, height= 2, padx= 5, foreground= 'white', background= 'black')
+south_georgia_txt = Label(root, text= 'South Georgia:', width= 15, height= 2, foreground= 'white', background= 'black')
 south_georgia_txt.config(font= ('Arial', f_size))
 
-greenland_txt = Label(root, text= 'Greenland:', width= 15, height= 2, padx= 5, foreground= 'white', background= 'black')
+greenland_txt = Label(root, text= 'Greenland:', width= 15, height= 2, foreground= 'white', background= 'black')
 greenland_txt.config(font= ('Arial', f_size))
 
-french_guiana_txt = Label(root, text= 'French Guiana:', width= 15, height= 2, padx= 5, foreground= 'white', background= 'black')
+french_guiana_txt = Label(root, text= 'French Guiana:', width= 15, height= 2, foreground= 'white', background= 'black')
 french_guiana_txt.config(font= ('Arial', f_size))
 
-new_york_txt = Label(root, text= 'New York:', width= 15, height= 2, padx= 5, foreground= 'white', background= 'black')
+new_york_txt = Label(root, text= 'New York:', width= 15, height= 2, foreground= 'white', background= 'black')
 new_york_txt.config(font= ('Arial', f_size))
 
-chicago_txt = Label(root, text= 'Chicago:', width= 15, height= 2, padx= 5, foreground= 'white', background= 'black')
+chicago_txt = Label(root, text= 'Chicago:', width= 15, height= 2, foreground= 'white', background= 'black')
 chicago_txt.config(font= ('Arial', f_size))
 
-denver_txt = Label(root, text= 'Denver:', width= 15, height= 2, padx= 5, foreground= 'white', background= 'black')
+denver_txt = Label(root, text= 'Denver:', width= 15, height= 2, foreground= 'white', background= 'black')
 denver_txt.config(font= ('Arial', f_size))
 
-los_angeles_txt = Label(root, text= 'Los Angeles:', width= 15, height= 2, padx= 5, foreground= 'white', background= 'black')
+los_angeles_txt = Label(root, text= 'Los Angeles:', width= 15, height= 2, foreground= 'white', background= 'black')
 los_angeles_txt.config(font= ('Arial', f_size))
 
-alaska_txt = Label(root, text= 'Alaska:', width= 15, height= 2, padx= 5, foreground= 'white', background= 'black')
+alaska_txt = Label(root, text= 'Alaska:', width= 15, height= 2, foreground= 'white', background= 'black')
 alaska_txt.config(font= ('Arial', f_size))
 
-hawaii_txt = Label(root, text= 'Hawaii:', width= 15, height= 2, padx= 5, foreground= 'white', background= 'black')
+hawaii_txt = Label(root, text= 'Hawaii:', width= 15, height= 2, foreground= 'white', background= 'black')
 hawaii_txt.config(font= ('Arial', f_size))
 
 #>= 0
-iceland_txt = Label(root, text= 'Iceland:', width=15, height= 2, padx= 5, foreground= 'white', background= 'black')
+iceland_txt = Label(root, text= 'Iceland:', width=15, height= 2, foreground= 'white', background= 'black')
 iceland_txt.config(font= ('Arial', f_size))
 
-england_txt = Label(root, text= 'England:', width=15, height= 2, padx= 5, foreground= 'white', background= 'black')
+england_txt = Label(root, text= 'England:', width=15, height= 2, foreground= 'white', background= 'black')
 england_txt.config(font= ('Arial', f_size))
 
-france_txt = Label(root, text= 'France:', width=15, height= 2, padx= 5, foreground= 'white', background= 'black')
+france_txt = Label(root, text= 'France:', width=15, height= 2, foreground= 'white', background= 'black')
 france_txt.config(font= ('Arial', f_size))
 
-moscow_txt = Label(root, text= 'Moscow:', width=15, height= 2, padx= 5, foreground= 'white', background= 'black')
+moscow_txt = Label(root, text= 'Moscow:', width=15, height= 2, foreground= 'white', background= 'black')
 moscow_txt.config(font= ('Arial', f_size))
 
-india_txt = Label(root, text= 'India:', width=15, height= 2, padx= 5, foreground= 'white', background= 'black')
+india_txt = Label(root, text= 'India:', width=15, height= 2, foreground= 'white', background= 'black')
 india_txt.config(font= ('Arial', f_size))
 
-kazakhstan_txt = Label(root, text= 'Kazakhstan:', width=15, height= 2, padx= 5, foreground= 'white', background= 'black')
+kazakhstan_txt = Label(root, text= 'Kazakhstan:', width=15, height= 2, foreground= 'white', background= 'black')
 kazakhstan_txt.config(font= ('Arial', f_size))
 
-china_txt = Label(root, text= 'China:', width=15, height= 2, padx= 5, foreground= 'white', background= 'black')
+china_txt = Label(root, text= 'China:', width=15, height= 2, foreground= 'white', background= 'black')
 china_txt.config(font= ('Arial', f_size))
 
-japan_txt = Label(root, text= 'Japan:', width=15, height= 2, padx= 5, foreground= 'white', background= 'black')
+japan_txt = Label(root, text= 'Japan:', width=15, height= 2, foreground= 'white', background= 'black')
 japan_txt.config(font= ('Arial', f_size))
 
-australia_txt = Label(root, text= 'Australia:', width=15, height= 2, padx= 5, foreground= 'white', background= 'black')
+australia_txt = Label(root, text= 'Australia:', width=15, height= 2, foreground= 'white', background= 'black')
 australia_txt.config(font= ('Arial', f_size))
 
-new_zealand_txt = Label(root, text= 'New Zealand:', width=15, height= 2, padx= 5, foreground= 'white', background= 'black')
+new_zealand_txt = Label(root, text= 'New Zealand:', width=15, height= 2, foreground= 'white', background= 'black')
 new_zealand_txt.config(font= ('Arial', f_size))
 
 #live time
@@ -285,100 +292,100 @@ hawaii_label = Label(root, text= datetime_utc_10.strftime('%d:%m:%Y %H:%M:%S %Z 
 hawaii_label.config(font= ('Arial', f_size))
 
 #>= 0
-iceland_label = Label(root, text= datetime_utc0_2.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, padx= 5, foreground= 'green', background= 'black')
+iceland_label = Label(root, text= datetime_utc0_2.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, foreground= 'green', background= 'black')
 iceland_label.config(font= ('Arial', f_size))
 
-england_label = Label(root, text= datetime_utc0.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, padx= 5, foreground= 'green', background= 'black')
+england_label = Label(root, text= datetime_utc0.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, foreground= 'green', background= 'black')
 england_label.config(font= ('Arial', f_size))
 
-france_label = Label(root, text= datetime_utc1.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, padx= 5, foreground= 'green', background= 'black')
+france_label = Label(root, text= datetime_utc1.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, foreground= 'green', background= 'black')
 france_label.config(font= ('Arial', f_size))
 
-moscow_label = Label(root, text= datetime_utc3.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, padx= 5, foreground= 'green', background= 'black')
+moscow_label = Label(root, text= datetime_utc3.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, foreground= 'green', background= 'black')
 moscow_label.config(font= ('Arial', f_size))
 
-india_label = Label(root, text= datetime_utc55.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, padx= 5, foreground= 'green', background= 'black')
+india_label = Label(root, text= datetime_utc55.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, foreground= 'green', background= 'black')
 india_label.config(font= ('Arial', f_size))
 
-kazakhstan_label = Label(root, text= datetime_utc6.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, padx= 5, foreground= 'green', background= 'black')
+kazakhstan_label = Label(root, text= datetime_utc6.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, foreground= 'green', background= 'black')
 kazakhstan_label.config(font= ('Arial', f_size))
 
-china_label = Label(root, text= datetime_utc8.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, padx= 5, foreground= 'green', background= 'black')
+china_label = Label(root, text= datetime_utc8.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, foreground= 'green', background= 'black')
 china_label.config(font= ('Arial', f_size))
 
-japan_label = Label(root, text= datetime_utc9.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, padx= 5, foreground= 'green', background= 'black')
+japan_label = Label(root, text= datetime_utc9.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, foreground= 'green', background= 'black')
 japan_label.config(font= ('Arial', f_size))
 
-australia_label = Label(root, text= datetime_utc11.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, padx= 5, foreground= 'green', background= 'black')
+australia_label = Label(root, text= datetime_utc11.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, foreground= 'green', background= 'black')
 australia_label.config(font= ('Arial', f_size))
 
-new_zealand_label = Label(root, text= datetime_utc12.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, padx= 5, foreground= 'green', background= 'black')
+new_zealand_label = Label(root, text= datetime_utc12.strftime('%d:%m:%Y %H:%M:%S %Z %z'), width= 28, height= 2, foreground= 'green', background= 'black')
 new_zealand_label.config(font= ('Arial', f_size))
 
 #tkinter grid
-title.grid(row= 0, column= 2, columnspan= 3)
+title.grid(row= 0, column= 2, columnspan= 3, pady= (0, title_pad))
 
 #<= -1
-cape_verde_txt.grid(row= 2, column= 0)
+cape_verde_txt.grid(row= 2, column= 0, padx= (padding_1, padding_2))
 cape_verde_label.grid(row= 2, column= 1)
 
-south_georgia_txt.grid(row= 3, column= 0)
+south_georgia_txt.grid(row= 3, column= 0, padx= (padding_1, padding_2))
 south_georgia_label.grid(row= 3, column= 1)
 
-greenland_txt.grid(row= 4, column= 0)
+greenland_txt.grid(row= 4, column= 0, padx= (padding_1, padding_2))
 greenland_label.grid(row= 4, column= 1)
 
-french_guiana_txt.grid(row= 5, column= 0)
+french_guiana_txt.grid(row= 5, column= 0, padx= (padding_1, padding_2))
 french_guiana_label.grid(row= 5, column= 1)
 
-new_york_txt.grid(row= 6, column= 0)
+new_york_txt.grid(row= 6, column= 0, padx= (padding_1, padding_2))
 new_york_label.grid(row= 6, column= 1)
 
-chicago_txt.grid(row= 7, column= 0)
+chicago_txt.grid(row= 7, column= 0, padx= (padding_1, padding_2))
 chicago_label.grid(row= 7, column= 1)
 
-denver_txt.grid(row= 8, column= 0)
+denver_txt.grid(row= 8, column= 0, padx= (padding_1, padding_2))
 denver_label.grid(row= 8, column= 1)
 
-los_angeles_txt.grid(row= 9, column= 0)
+los_angeles_txt.grid(row= 9, column= 0, padx= (padding_1, padding_2))
 los_angeles_label.grid(row= 9, column= 1)
 
-alaska_txt.grid(row= 10, column= 0)
+alaska_txt.grid(row= 10, column= 0, padx= (padding_1, padding_2))
 alaska_label.grid(row= 10, column= 1)
 
-hawaii_txt.grid(row= 11, column= 0)
+hawaii_txt.grid(row= 11, column= 0, padx= (padding_1, padding_2))
 hawaii_label.grid(row= 11, column= 1)
 
 #>= 0
 iceland_txt.grid(row= 2, column= 5)
-iceland_label.grid(row= 2, column= 6)
+iceland_label.grid(row= 2, column= 6, padx= (padding_2, padding_1))
 
 england_txt.grid(row= 3, column= 5)
-england_label.grid(row= 3, column= 6)
+england_label.grid(row= 3, column= 6, padx= (padding_2, padding_1))
 
 france_txt.grid(row= 4, column= 5)
-france_label.grid(row= 4, column= 6)
+france_label.grid(row= 4, column= 6, padx= (padding_2, padding_1))
 
 moscow_txt.grid(row= 5, column= 5)
-moscow_label.grid(row= 5, column= 6)
+moscow_label.grid(row= 5, column= 6, padx= (padding_2, padding_1))
 
 india_txt.grid(row= 6, column= 5)
-india_label.grid(row= 6, column= 6)
+india_label.grid(row= 6, column= 6, padx= (padding_2, padding_1))
 
 kazakhstan_txt.grid(row= 7, column= 5)
-kazakhstan_label.grid(row= 7, column= 6)
+kazakhstan_label.grid(row= 7, column= 6, padx= (padding_2, padding_1))
 
 china_txt.grid(row= 8, column= 5)
-china_label.grid(row= 8, column= 6)
+china_label.grid(row= 8, column= 6, padx= (padding_2, padding_1))
 
 japan_txt.grid(row= 9, column= 5)
-japan_label.grid(row= 9, column= 6)
+japan_label.grid(row= 9, column= 6, padx= (padding_2, padding_1))
 
 australia_txt.grid(row= 10, column= 5)
-australia_label.grid(row= 10, column= 6)
+australia_label.grid(row= 10, column= 6, padx= (padding_2, padding_1))
 
 new_zealand_txt.grid(row= 11, column= 5)
-new_zealand_label.grid(row= 11, column= 6)
+new_zealand_label.grid(row= 11, column= 6, padx= (padding_2, padding_1))
 
 def main_loop():
     global days_till
@@ -389,23 +396,26 @@ def main_loop():
     global dates
     global t_string
     global num
+    global f_size
+    global padding_1, padding_2, title_pad
 
     #dynamic font and window size change
     width_value = root.winfo_width()
     height_value = root.winfo_height()
-
     if width_value != 1 and height_value != 1:
         root.geometry('%dx%d' % (width_value, height_value))
+        if width_value < 2560 or height_value < 1200:
+            padding_1 = 40
+            title_pad = 10
+            f_size = 20
+        else:
+            padding_1 = 170
+            title_pad = 50
+            f_size = 35
     else:
         width_value = root.winfo_screenwidth()
         height_value = root.winfo_screenheight()
         root.geometry('%dx%d' % (width_value, height_value))
-
-    #changing font size relative to screen size
-    if width_value < 2560:
-        f_size = 20
-    else:
-        f_size = 35
 
     root.after(100, timer_loop)
 
@@ -479,6 +489,29 @@ def main_loop():
     australia_label.config(text= datetime_utc11.strftime('%d:%m:%Y %H:%M:%S %Z %z'), font= ('Arial', f_size))
     new_zealand_txt.config(font= ('Arial', f_size))
     new_zealand_label.config(text= datetime_utc12.strftime('%d:%m:%Y %H:%M:%S %Z %z'), font= ('Arial', f_size))
+
+    #padding replacement
+    title.grid(row= 0, column= 2, columnspan= 3, pady= (0, title_pad))
+    cape_verde_txt.grid(row= 2, column= 0, padx= (padding_1, padding_2))
+    south_georgia_txt.grid(row= 3, column= 0, padx= (padding_1, padding_2))
+    greenland_txt.grid(row= 4, column= 0, padx= (padding_1, padding_2))
+    french_guiana_txt.grid(row= 5, column= 0, padx= (padding_1, padding_2))
+    new_york_txt.grid(row= 6, column= 0, padx= (padding_1, padding_2))
+    chicago_txt.grid(row= 7, column= 0, padx= (padding_1, padding_2))
+    denver_txt.grid(row= 8, column= 0, padx= (padding_1, padding_2))
+    los_angeles_txt.grid(row= 9, column= 0, padx= (padding_1, padding_2))
+    alaska_txt.grid(row= 10, column= 0, padx= (padding_1, padding_2))
+    hawaii_txt.grid(row= 11, column= 0, padx= (padding_1, padding_2))
+    iceland_label.grid(row= 2, column= 6, padx= (padding_2, padding_1))
+    england_label.grid(row= 3, column= 6, padx= (padding_2, padding_1))
+    france_label.grid(row= 4, column= 6, padx= (padding_2, padding_1))
+    moscow_label.grid(row= 5, column= 6, padx= (padding_2, padding_1))
+    india_label.grid(row= 6, column= 6, padx= (padding_2, padding_1))
+    kazakhstan_label.grid(row= 7, column= 6, padx= (padding_2, padding_1))
+    china_label.grid(row= 8, column= 6, padx= (padding_2, padding_1))
+    japan_label.grid(row= 9, column= 6, padx= (padding_2, padding_1))
+    australia_label.grid(row= 10, column= 6, padx= (padding_2, padding_1))
+    new_zealand_label.grid(row= 11, column= 6, padx= (padding_2, padding_1))
 
     #launch location highlight
     if launch_loc != '':
@@ -558,6 +591,7 @@ def main_loop():
             if num +1 == len(dates):
                 extra_days = True
             else:
+                played = False
                 num += 1
         #duplication for no overlapping
         t_string, l_year, l_month, l_day, l_hour, l_minute, l_second = dates[num].split(',')
@@ -590,7 +624,7 @@ def main_loop():
         else:
             t_string = f'{t_string}-'
 
-        ts_label = Label(root, text= t_string, width= 3, height= 2, padx= 10, foreground= 'white', background= 'black')
+        ts_label = Label(root, text= t_string, width= 3, height= 2, foreground= 'white', background= 'black')
         ts_label.config(font= ('Arial', f_size + 5))
 
         t_label = Label(root, width= 8, height= 2, foreground= 'blue', background= 'black')
@@ -613,7 +647,7 @@ def main_loop():
             days = ' Days'
 
         days_till = str(days_till)
-        day_label = Label(root, text= days_till + days, width= 8, height= 2, padx= 10, foreground= 'blue', background= 'black')
+        day_label = Label(root, text= days_till + days, width= 8, height= 2, foreground= 'blue', background= 'black')
         day_label.config(font= ('Arial', f_size + 5))
 
         if extra_days == True:
