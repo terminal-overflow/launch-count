@@ -68,7 +68,12 @@ root = Tk()
 root.title('World Times')
 root.configure(background= 'black')
 #changing font size relative to screen size
-f_size = 80
+width_value = root.winfo_screenwidth()
+height_value = root.winfo_screenheight()
+if width_value <= 1280 and height_value <= 720:
+    f_size = 50
+else:
+    f_size = 80
 
 #key bind functions
 def close(event):

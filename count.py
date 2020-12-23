@@ -97,13 +97,20 @@ root.configure(background= 'black')
 width_value = root.winfo_screenwidth()
 height_value = root.winfo_screenheight()
 root.wm_minsize(1440, 700)
-#changing font size relative to screen size
-if width_value < 2560 and height_value < 1200:
-    f_size = 20
-    title_pad = 10
+#min screen size and relative font size
+if width_value <= 1280 and height_value <= 720:
+    root.wm_minsize(755, 350)
+    f_size = 10
+    title_pad = 5
 else:
-    f_size = 35
-    title_pad = 50
+    if width_value < 2560 and height_value < 1200:
+        f_size = 20
+        title_pad = 10
+    else:
+        f_size = 35
+        title_pad = 50
+    root.wm_minsize(1440, 700)
+
 #window variables
 padding_1 = (100 / 2560) * width_value
 padding_1 = (padding_1 / 100) * 170
@@ -403,15 +410,20 @@ def main_loop():
     width_value = root.winfo_width()
     height_value = root.winfo_height()
     if width_value != 1 and height_value != 1:
-        root.geometry('%dx%d' % (width_value, height_value))
-        if width_value < 2560 or height_value < 1200:
-            padding_1 = 40
-            title_pad = 10
-            f_size = 20
+        #min screen size and relative font size
+        if width_value <= 1280 and height_value <= 720:
+            padding_1 = 10
+            f_size = 10
+            title_pad = 5
         else:
-            padding_1 = 170
-            title_pad = 50
-            f_size = 35
+            if width_value < 2560 and height_value < 1200:
+                padding_1 = 40
+                f_size = 20
+                title_pad = 10
+            else:
+                padding_1 = 170
+                f_size = 35
+                title_pad = 50
     else:
         width_value = root.winfo_screenwidth()
         height_value = root.winfo_screenheight()
