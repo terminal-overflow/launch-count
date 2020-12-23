@@ -59,10 +59,10 @@ python3 simple_count.py
 #### Note
 These files can be found in the `info/` directory.
 
-### Keybinds (`count.py`)
-* F: Toggle fullscreen
-* Esc: Exit fullscreen
+### Keybinds
 * Q: Quit program
+* F: Toggle fullscreen (`count.py` only)
+* Esc: Exit fullscreen (`count.py` only)
 
 ---
 ### Example
