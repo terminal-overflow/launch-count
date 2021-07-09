@@ -77,4 +77,4 @@ Text in highlight.txt (optional): `New York`
 
 ---
 ## License
-Launch count is released under the MIT license. See LICENSE for details.
+Launch count is released under the Apache License 2.0. See LICENSE for details.
