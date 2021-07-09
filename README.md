@@ -28,7 +28,7 @@ source [environment name]/bin/activate
 cd path/to/launch-count
 ```
 
-### Install
+### Install requirements
 ```
 pip3 install -r requirements.txt
 ```
