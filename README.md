@@ -33,12 +33,15 @@ cd path/to/launch-count
 pip3 install -r requirements.txt
 ```
 
-### Run launch-count with time zones
+### Run
+```
+cd src
+```
+with launch-count with time zones
 ```
 python3 count.py
 ```
-
-### Run launch-count without time zones
+with launch-count without time zones
 ```
 python3 simple_count.py
 ```
