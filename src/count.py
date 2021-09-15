@@ -672,10 +672,14 @@ def main_loop():
             day_label.config(foreground= 'black')
 
         #config labels - colour schemes
-        if days_till == '0':
-            day_label.config(foreground= 'red')
-            t_label.config(foreground= 'red')
-        elif extra_days == True:
+        if extra_days == False:
+            #split total_time (H:M:S)
+            curr_time = total_time.split(':')
+            curr_hour, curr_minute, __ = curr_time
+            if days_till == '0' and curr_hour == '0' and curr_minute == '00':
+                day_label.config(foreground= 'red')
+                t_label.config(foreground= 'red')
+        else:
             day_label.config(foreground= 'green')
 
         #countdown flash
