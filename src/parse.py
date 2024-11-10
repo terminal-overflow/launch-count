@@ -8,7 +8,7 @@ class ParseInfo:
 
     def __init__(self):
         # Change directory into launch-count/
-        os.chdir(f"{os.path.dirname(os.path.abspath(__file__))}/")
+        os.chdir(f"{Path(__file__).resolve().parent.parent}/")
         self.dates = self.parse_dates()
         self.locations = self.parse_file("info/locations.txt")
 
