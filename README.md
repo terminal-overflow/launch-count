@@ -13,8 +13,11 @@ python3 count.py
 ```
 
 ## Usage
-### Date(s) entry
-* The file `dates.txt` controls when the event is taking place.
+### Initial setup
+On initial run of this program, if *any* of the required files aren't present, you will be asked to enter the required data for the file(s). These files will then be created with the data inputted.
+
+### Date(s)
+* The file `dates.txt` stores these dates.
 * Format: `year,month,day,hour,minute,second`.
 * Any number of dates can be entered (distinguished by a new line).
   * These dates are ordered on input.
