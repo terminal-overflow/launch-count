@@ -246,7 +246,7 @@ class CountTimer:
         self.update_callback(time_str, self.get_colour())
 
         # Update date and time
-        self.display.date_label.config(text=f"{self.target_date.strftime('%Y/%m/%d')}")
+        self.display.date_label.config(text=f"{self.target_date.strftime('%d/%m/%Y')}")
         self.display.time_label.config(text=f"{self.target_date.strftime('%H:%M:%S')}")
 
         self.display.after(500, self.count)
