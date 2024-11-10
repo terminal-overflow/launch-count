@@ -3,6 +3,7 @@ from datetime import datetime
 import pytz
 import tkinter as tk
 from enum import Enum
+from math import floor
 
 UTC_LT_TZ = [
     "Atlantic/Cape_Verde",
@@ -108,7 +109,7 @@ class MainApp(tk.Tk):
         self.wm_minsize(1200, 400)
         # Ensure rows and columns grow and shrink
         self.grid_columnconfigure(0, weight=1)
-        self.grid_columnconfigure(1, weight=1)
+        self.grid_columnconfigure(1, weight=1, minsize=200)
         self.grid_columnconfigure(2, weight=1)
         self.grid_rowconfigure(1, weight=1)
 
@@ -281,9 +282,11 @@ class CountTimer:
         More than one hour: Blue
         """
         remaining = self.target_date - datetime.now()
-        # print(remaining.total_seconds().__floor__()) How to do colour for seconds
+        remaining_seconds = floor(remaining.total_seconds())
         if self.is_counting_up:
             return "green"
+        elif remaining_seconds < 10 and remaining_seconds % 2 == 1:
+            return "darkred"
         elif remaining.total_seconds() // 3600 < 1:
             return "red"
         else:
