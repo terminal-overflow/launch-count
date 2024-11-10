@@ -34,6 +34,8 @@ UTC_GT_TZ = [
 
 
 class TZ_TRANSLATIONS_LT(Enum):
+    """Timezones less than UTC time."""
+
     CAPE_VERDE = UTC_LT_TZ[0]
     SOUTH_GEORGIA = UTC_LT_TZ[1]
     GREENLAND = UTC_LT_TZ[2]
@@ -47,6 +49,8 @@ class TZ_TRANSLATIONS_LT(Enum):
 
 
 class TZ_TRANSLATIONS_GT(Enum):
+    """Timezones greater than or equal to UTC time."""
+
     REYKJAVIK = UTC_GT_TZ[0]
     LONDON = UTC_GT_TZ[1]
     FRANCE = UTC_GT_TZ[2]
