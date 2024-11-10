@@ -24,7 +24,7 @@ class ParseInfo:
         except FileNotFoundError:
             # Get date string and write to file
             print(f"{file_path_name} not found")
-            print(f"Populate the file with the required data. Enter nothing to return.")
+            print(f"Input the required data. Enter nothing to return.")
 
             lines = []
             while True:
