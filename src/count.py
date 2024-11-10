@@ -166,7 +166,7 @@ class CountTimerDisplay(tk.Frame):
             self,
             text="--/--/--",
             font=("Arial", 20),
-            foreground="white",
+            foreground="lightgrey",
             background="black",
         )
         self.date_label.grid(pady=20, row=0, column=0, sticky="nsew")
@@ -176,7 +176,7 @@ class CountTimerDisplay(tk.Frame):
             self,
             text="--:--:--",
             font=("Arial", 20),
-            foreground="white",
+            foreground="lightgrey",
             background="black",
         )
         self.time_label.grid(pady=20, row=0, column=2, sticky="nsew")
