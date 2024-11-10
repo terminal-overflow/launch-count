@@ -72,6 +72,7 @@ class MainApp(tk.Tk):
 
     def __init__(self):
         parse_info = ParseInfo()
+
         super().__init__()
 
         # Window setup
@@ -161,7 +162,7 @@ class CountTimerDisplay(tk.Frame):
         self.date_label = tk.Label(
             self,
             text="--/--/--",
-            font=("Arial", 25),
+            font=("Arial", 20),
             foreground="white",
             background="black",
         )
@@ -171,7 +172,7 @@ class CountTimerDisplay(tk.Frame):
         self.time_label = tk.Label(
             self,
             text="--:--:--",
-            font=("Arial", 25),
+            font=("Arial", 20),
             foreground="white",
             background="black",
         )
@@ -186,8 +187,8 @@ class CountTimerDisplay(tk.Frame):
 
     def update_font_size(self, font_size):
         self.count_label.config(font=("Arial", font_size))
-        self.date_label.config(font=("Arial", int(font_size / 1.6)))
-        self.time_label.config(font=("Arial", int(font_size / 1.6)))
+        self.date_label.config(font=("Arial", int(font_size / 2)))
+        self.time_label.config(font=("Arial", int(font_size / 2)))
 
 
 class CountTimer:
@@ -299,7 +300,7 @@ class TimeDisplay(tk.Frame):
                 padx=20,
                 pady=10,
             )
-            label_name.grid(row=row, column=0, sticky="w")
+            label_name.grid(row=row, column=0, sticky="e")
 
             label_time = tk.Label(
                 self,
