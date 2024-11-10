@@ -227,7 +227,7 @@ class CountTimer:
     def count(self):
         """
         Calculates the remaining/elapsed time and updates the display accordingly.
-        Updates every 1000ms
+        Updates every 500ms
         """
         now = datetime.now()
         if self.is_counting_up:
@@ -249,7 +249,7 @@ class CountTimer:
         self.display.date_label.config(text=f"{self.target_date.strftime('%Y/%m/%d')}")
         self.display.time_label.config(text=f"{self.target_date.strftime('%H:%M:%S')}")
 
-        self.display.after(1000, self.count)
+        self.display.after(500, self.count)
 
     def get_colour(self):
         """
@@ -281,7 +281,6 @@ class TimeDisplay(tk.Frame):
         super().__init__(parent, background="black")
         self.tz_translations = tz_translations
         self.locations = ParseInfo().locations
-        self.update_interval = 1000
         self.labels = []  # Store labels for updating
 
         # Set up initial labels for each timezone
@@ -327,7 +326,7 @@ class TimeDisplay(tk.Frame):
     def update_times(self):
         """
         Get the current time for the timezone and update each label.
-        Updates every 1000ms
+        Updates every 500ms
         """
         utc_now = datetime.now(pytz.utc)
 
@@ -340,7 +339,7 @@ class TimeDisplay(tk.Frame):
             label_time.config(text=current_time)
 
         # Schedule the next update
-        self.after(self.update_interval, self.update_times)
+        self.after(500, self.update_times)
 
     def update_font_size(self, font_size):
         for label_name, label_time in self.labels:
