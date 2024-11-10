@@ -190,8 +190,8 @@ class CountTimerDisplay(tk.Frame):
 
     def update_font_size(self, font_size):
         self.count_label.config(font=("Arial", font_size))
-        self.date_label.config(font=("Arial", int(font_size / 2)))
-        self.time_label.config(font=("Arial", int(font_size / 2)))
+        self.date_label.config(font=("Arial", int(font_size / 2.3)))
+        self.time_label.config(font=("Arial", int(font_size / 2.3)))
 
 
 class CountTimer:
