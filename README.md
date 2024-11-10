@@ -24,7 +24,9 @@ On initial run of this program, if *any* of the required files aren't present, y
 * Any number of dates can be entered (distinguished by a new line).
   * These dates are ordered on input.
 * A line can be **commented out**, in either of the files, using a hashtag, `#`.
-* If no date is entered, the program will just display the time zones.
+
+> [!note]
+> If no date is entered, the program will just display the time zones.
 
 ### Time zone highlight
 * The file `locations.txt` controls which time zones are highlighted.

@@ -93,10 +93,12 @@ class MainApp(tk.Tk):
 
         self.fs = False
         self.dates = parse_info.dates
+        self.show_count = len(self.dates) != 0
 
         # Timer display frame
-        self.timer_display = CountTimerDisplay(self, self.dates)
-        self.timer_display.grid(row=0, column=0, columnspan=3, sticky="nsew")
+        if self.show_count:
+            self.timer_display = CountTimerDisplay(self, self.dates)
+            self.timer_display.grid(row=0, column=0, columnspan=3, sticky="nsew")
 
         # Timezone frames
         self.left_zones = TimeDisplay(self, TZ_TRANSLATIONS_LT)
@@ -130,7 +132,8 @@ class MainApp(tk.Tk):
         large_font_size = max(40, int(widget_width / 30))
 
         # Update the frames
-        self.timer_display.update_font_size(large_font_size)
+        if self.show_count:
+            self.timer_display.update_font_size(large_font_size)
         self.left_zones.update_font_size(small_font_size)
         self.right_zones.update_font_size(small_font_size)
 
