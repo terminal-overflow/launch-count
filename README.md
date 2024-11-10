@@ -2,6 +2,8 @@
 ## Date Counter
 This program provides a date countdown/up. Although intended to be used for rocket launches or space related events, this can be used to display a count for any Date entered.
 
+![Launch Count](src/docs/images/demo_image.png)
+
 ### Dependencies
 * pytz
 
