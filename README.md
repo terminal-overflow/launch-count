@@ -7,7 +7,7 @@ This program provides a date countdown/up. Although intended to be used for rock
 
 
 ## Run
-```
+```bash
 cd src
 python3 count.py
 ```
