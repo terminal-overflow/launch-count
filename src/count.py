@@ -1,9 +1,9 @@
 import os
 from datetime import datetime
 import pytz
-import tkinter as tk
 from enum import Enum
 from math import floor
+import tkinter as tk
 
 UTC_LT_TZ = [
     "Atlantic/Cape_Verde",
@@ -59,7 +59,7 @@ class TZ_TRANSLATIONS_GT(Enum):
 
 
 class ParseInfo:
-    """Utility class to parse information files and return information."""
+    """Utility class to parse information files and returns data in a suitable format."""
 
     def __init__(self):
         # Change directory into launch-count/
@@ -100,6 +100,12 @@ class ParseInfo:
 
 
 class MainApp(tk.Tk):
+    """
+    The Main App class.
+    Initialises the `Tk` superclass.
+    Adds configuration for the window and the frames enclosed.
+    """
+
     def __init__(self):
         super().__init__()
 
@@ -146,9 +152,11 @@ class MainApp(tk.Tk):
         self.fs = False
         self.wm_attributes("-fullscreen", "false")
         self.resize_fonts(event)
+        # Prevents overlapping of labels on resize
         self.update_idletasks()
 
     def resize_fonts(self, event):
+        """Resize label fonts based on the window size."""
         widget_width = self.winfo_width()
         # Calculate new font size based on window width
         small_font_size = max(20, int(widget_width / 60))
@@ -277,9 +285,10 @@ class CountTimer:
     def get_colour(self):
         """
         Returns the colour for the count.
-        Counting up: Green
-        Less than 1 hour: Red
-        More than one hour: Blue
+        Counting up: GREEN.
+        Less than 10 seconds and odd numbers: DARK RED.
+        Less than 1 hour: RED.
+        More than one hour: BLUE.
         """
         remaining = self.target_date - datetime.now()
         remaining_seconds = floor(remaining.total_seconds())
@@ -365,7 +374,6 @@ class TimeDisplay(tk.Frame):
         self.after(self.update_interval, self.update_times)
 
     def update_font_size(self, font_size):
-        """"""
         for label_name, label_time in self.labels:
             label_name.config(font=("Arial", font_size))
             label_time.config(font=("Arial", font_size))
