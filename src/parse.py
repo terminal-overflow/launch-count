@@ -1,5 +1,6 @@
 import os
 from datetime import datetime
+from pathlib import Path
 
 
 class ParseInfo:
@@ -14,10 +15,30 @@ class ParseInfo:
     def parse_file(self, file_path: str):
         """Parse the file passes in.
         Returns an array of data, separated by line."""
+        file_path_name = Path(file_path).name
 
-        # Read the file
-        with open(file_path, "r") as file:
-            lines = file.readlines()
+        try:
+            # Read the file
+            with open(file_path, "r") as file:
+                lines = file.readlines()
+        except FileNotFoundError:
+            # Get date string and write to file
+            print(f"{file_path_name} not found")
+            print(f"Populate the file with the required data. Enter nothing to return.")
+
+            lines = []
+            while True:
+                initial_input = input()
+
+                if initial_input == "":
+                    break
+
+                lines.append(initial_input)
+
+            print(f"Creating file {file_path_name}\n")
+            # Write to the file with the new data
+            with open(file_path, "w") as file:
+                file.writelines(lines)
 
         # Filter out comments or invalid lines
         # Also make every string lowercase

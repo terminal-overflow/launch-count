@@ -71,6 +71,7 @@ class MainApp(tk.Tk):
     """
 
     def __init__(self):
+        parse_info = ParseInfo()
         super().__init__()
 
         # Window setup
@@ -90,7 +91,7 @@ class MainApp(tk.Tk):
         self.bind("r", self.resize_fonts)
 
         self.fs = False
-        self.dates = ParseInfo().dates
+        self.dates = parse_info.dates
 
         # Timer display frame
         self.timer_display = CountTimerDisplay(self, self.dates)
