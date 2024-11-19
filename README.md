@@ -34,7 +34,7 @@ On initial run of this program, if *any* of the required files aren't present, y
 
 All possible values (case-insensitive):
 
-|||
+|--|--|
 |--|--|
 |Cape Verde|Reykjavic|
 South Georgia|London|
@@ -68,4 +68,4 @@ Text in dates.txt: `2020,2,20,13,15,18`
 Text in locations.txt (optional): `New York`
 
 ## License
-Launch count is released under the Apache License 2.0. See LICENSE for details.
+Launch count is released under the MIT License. See LICENSE for details.
