@@ -335,7 +335,7 @@ class TimeDisplay(tk.Frame):
             self.labels, self.tz_translations
         ):
             tz = pytz.timezone(tz_translation.value)
-            current_time = utc_now.astimezone(tz).strftime("%d:%m:%Y %H:%M:%S %Z %z")
+            current_time = utc_now.astimezone(tz).strftime("%d/%m/%Y %H:%M:%S %Z %z")
             label_time.config(text=current_time)
 
         # Schedule the next update
